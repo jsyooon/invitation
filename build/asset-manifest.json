@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/invitation/static/css/main.46cef12e.css",
+    "main.js": "/invitation/static/js/main.90e0bc99.js",
+    "index.html": "/invitation/index.html",
+    "main.46cef12e.css.map": "/invitation/static/css/main.46cef12e.css.map",
+    "main.90e0bc99.js.map": "/invitation/static/js/main.90e0bc99.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.46cef12e.css",
+    "static/js/main.90e0bc99.js"
+  ]
+}
