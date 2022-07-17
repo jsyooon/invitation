@@ -1,24 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import GlobalStyle from './style';
+import Section1 from './Section1';
+import Section2 from './Section2';
+import Section3 from './Section3';
+import Gallery from './Gallery';
+import About from './About';
+import Pay from './Pay';
+import Footer from './Footer';
+
+const Wrapper = styled.div`
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+
+  &.scroll {
+    height: auto;
+  }
+`;
 
 function App() {
+  const [load, setLoad] = useState('');
+  const [scroll, setScroll] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoad('load');
+    }, 300);
+
+    setTimeout(() => {
+      setScroll(true);
+    }, 3000);
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+      <Wrapper className={`wrap ${load} ${scroll ? 'scroll' : ''}`}>
+        <Section1 load={load} />
+        <Section2 />
+        <Section3 />
+        <Gallery />
+        <About />
+        <Pay />
+        <Footer />
+      </Wrapper>
+    </>
   );
 }
 
